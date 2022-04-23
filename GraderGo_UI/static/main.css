@@ -1,0 +1,146 @@
+body{
+
+    --color-green:#009579;
+    --color-primary: #593196;
+    --color-primary-dark:#472778;
+    --color-darkgreen:#007f67;
+    --color-secondary:#252c6a;
+    --color-error:#cc3333;
+    --color-success:#4bb544;
+    --border-radius:4px;
+
+
+
+    font-size: 18px;
+
+
+}
+
+.main_start
+{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    padding-bottom: 100px;
+
+
+}
+
+.container
+{
+    width: 400px;
+    max-width: 400px;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background: #ffffff;
+}
+.container,
+.form__input,
+.form_button
+{
+    font:500 1rem 'Roboto', sans-serif;
+
+
+}
+
+.container-essay{
+    width: 1300px;
+    max-width: 1300px;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background: #ffffff;
+}
+
+.form >*:first-child
+{
+    margin-top :0;
+}
+
+.form >*:last-child
+{
+    margin-bottom :0;
+}
+
+.form__hidden
+{
+display:none;
+
+}
+.form__title
+{
+    font-size:xx-large;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.form__input-group
+{
+    margin-bottom:1rem;
+}
+
+.form__input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    border: 1px solid #dddddd;
+    outline: none;
+    background: #eeeeee;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+
+.form__input:focus {
+    border-color: var(--color-primary);
+    background: #ffffff;
+}
+
+.form_button
+{
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color:#ffffff;
+    border:none;
+    border-radius:var(--border-radius);
+    outline :none;
+    cursor: pointer;
+    background: var(--color-primary);
+
+}
+.form_button:hover{
+    background: var(--color-primary-dark);
+}
+.form__text
+{
+    text-align: center;
+      margin-top: 20px;
+
+}
+.form__link
+{
+    color: var(--color-secondary);
+    text-decoration: none;
+    cursor: pointer;
+}
+.form__link:hover
+{
+    text-decoration: underline;
+}
+
+#success_text
+{
+    color: var(--color-green);
+}
+
+.hide
+{
+display:none;
+
+}

@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GraderGo</title>
+    <link rel="stylesheet" href= "{{ url_for('static',filename='bootstrap.min.css') }}">
+
+    {% block css%}
+
+    {%endblock%}
+
+
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid" >
+
+          <a class="navbar-brand"   href="#"><h1>GraderGo</h1>An Automated Grading System</a>
+      {% block username%}
+
+      {%endblock%}
+
+
+
+
+
+  </div>
+</nav>
+
+{%block content%}
+
+
+
+{%endblock%}
+
+
+
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+{%block scripts %}
+
+{%endblock%}
+
+
+
+</body>
+</html>

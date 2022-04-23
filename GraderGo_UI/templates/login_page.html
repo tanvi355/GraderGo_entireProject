@@ -1,0 +1,95 @@
+{% extends 'base.html'%}
+
+{% block css%}
+<link rel="stylesheet" href= "{{ url_for('static',filename='login_page.css') }}">
+<link rel="stylesheet" href= "{{ url_for('static',filename='main.css') }}">
+{%endblock%}
+
+{% block username%}
+
+
+
+        <div class="d-flex">
+        <a href="/logout"  style="color:white;font-size:30px;">Hello, {{username}}</a>
+      </div>
+{%endblock%}
+
+{%block content%}
+
+<div class="main_start">
+
+<div class="container-essay" style="width:700%;" >
+
+    {%if save_msg is not none%}
+    <div class="alert alert-dismissible alert-secondary">
+
+      <button type="button" class="btn-close" data-bs-dismiss="alert" onclick="this.parentElement.style.display='none';"></button>
+      {{save_msg}}
+
+    </div>
+
+
+
+    {%endif%}
+
+
+        <form class="form " id="" action="/grader" method="POST">
+
+            <h2 class="form__title">Enter your Essay</h2>
+
+
+
+
+            {%if essay is none%}
+
+            <div class="form__input-group"> <!--since we are keeping the email as unique-->
+                <textarea name="essay" required class="form__input" autofocus  rows="10" cols="30" placeholder="Essay"></textarea>
+            </div>
+
+            {%else%}
+            <div class="form__input-group"> <!--since we are keeping the email as unique-->
+                <textarea name="essay" required class="form__input" autofocus  rows="10" cols="30" placeholder="Essay">
+                    {{essay}}
+                </textarea>
+            </div>
+
+            {%endif%}
+
+
+
+            <button type="submit" class="btn btn-primary btn-lg">Check score</button>
+
+
+
+            {% if score is not none%}
+
+            <p class="form__text">
+                <a style="color:#252c6a;" >Your Score is : {{score}}</a><br><br>
+
+            </p>
+
+                <div class="form__input-group">
+                <input type="text" name="essay_name"  class="form__input" autofocus   placeholder="Essay_Title">
+
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg" formaction="/save">Save score</button>
+
+
+
+
+            {%endif%}
+
+
+</form>
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+{%endblock%}

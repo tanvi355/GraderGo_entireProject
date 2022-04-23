@@ -1,0 +1,106 @@
+{% extends 'base.html'%}
+
+{%block css%}
+<link rel="stylesheet" href= "{{ url_for('static',filename='main.css') }}">
+{%endblock%}
+
+
+
+{%block content%}
+
+{%if msg is not none%}
+<div class="alert alert-dismissible alert-secondary">
+
+  <button type="button" class="btn-close" data-bs-dismiss="alert" onclick="this.parentElement.style.display='none';"></button>
+  {{msg}}
+
+</div>
+
+
+
+{%endif%}
+
+{%if error is not none%}
+
+<div class="alert alert-dismissible alert-danger">
+
+  <button type="button" class="btn-close" data-bs-dismiss="alert" onclick="this.parentElement.style.display='none';"></button>
+  {{error}}
+
+</div>
+
+
+
+{%endif%}
+
+<div class="main_start">
+
+<div class="container">
+
+
+
+        <form class="form " id="login" action="/login_page" method="POST">
+
+            <h2 class="form__title">Login</h2>
+
+            <div class="form__input-group"> <!--since we are keeping the email as unique-->
+                <input type="email" name="email" required class="form__input" autofocus placeholder="Email">
+
+            </div>
+
+            <div class="form__input-group">
+                <input type="password" name="password" required class="form__input" autofocus placeholder="Password">
+
+            </div>
+
+            <button class="form_button" type="submit">Login</button>
+            <p class="form__text">
+                <a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Create account</a><br><br>
+
+            </p>
+
+
+
+        </form>
+
+        <form class="form form__hidden" id="createAccount" action="/create_user" method="POST">
+            <h2 class="form__title">Create Account</h2>
+            <div class="form__input-group">
+                <input type="text" name="username" required class="form__input" autofocus placeholder="Username">
+
+            </div>
+
+            <div class="form__input-group">
+                <input type="email" name="email" required class="form__input" autofocus placeholder="Email Address">
+
+            </div>
+
+            <div class="form__input-group">
+                <input type="password" name="pass" required class="form__input" autofocus placeholder="Password">
+
+            </div>
+
+            <div class="form__input-group">
+                <input type="password" name="cpass" required class="form__input" autofocus placeholder="Confirm password">
+
+            </div>
+            <p class="form__text">
+                <a class="form__link" href="./" id="linkLogin">Already have an account? Login</a>
+            </p>
+
+            <button id="accCreate" class="form_button" type="submit" name="submit" >Create</button>
+
+
+        </form>
+
+
+
+
+    </div>
+</div>
+
+{%endblock%}
+
+{% block scripts%}
+<script src="{{url_for('static', filename='main.js')}}"></script>
+{%endblock%}
