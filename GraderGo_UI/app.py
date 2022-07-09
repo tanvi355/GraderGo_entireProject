@@ -132,7 +132,7 @@ def save():
     if request.method=='POST':
         essay=request.form.get('essay')
         score=essay
-        essay_name=request.form.get('essayapp_name')
+        essay_name=request.form.get('essay_name')
         print(essay_name)
         if (essay_name == ""):
             # print("heeeeloo")
