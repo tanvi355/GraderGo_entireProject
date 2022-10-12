@@ -13,3 +13,8 @@ This is the entire project code for **GraderGo: An Automated Essay Grading Syste
 - The API takes the essay, does the preprocessing steps and predicts the score
 
 - The frontend is made using HTML, CSS, JS and Bootstrap
+
+
+## Developed by
+
+### [Tanvi](https://github.com/tanvi355) and [Sakina](https://github.com/sakinanomi)
